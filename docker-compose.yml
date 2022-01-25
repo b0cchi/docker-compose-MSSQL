@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SampleTest777
+    ports:
+      - 127.0.0.1:1433:1433
+    tty: true
+    working_dir: /home
+    command: ["./entrypoint.sh"]
+    volumes:
+      - ./db:/home
