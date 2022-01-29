@@ -12,4 +12,9 @@ done
 >&1 echo "   |    MS SQL SERVER IS RUNNING    |"
 >&1 echo "   |    ************************    |"
 
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SA_PASSWORD} -d master -i ./init.sql
+list=$(ls ./init/)
+
+for f in $list; do
+  echo "$f"
+  /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${SA_PASSWORD} -d master -i ./init/$f
+done
