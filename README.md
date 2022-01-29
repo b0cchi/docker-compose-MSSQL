@@ -9,7 +9,6 @@ MSSQL Serverの開発環境をdocker-composeで立てるためのサンプル
 .
 ├─ docker-compose.yml
 ├─ README.md
-│
 └─db
     ├─ entrypoint.sh
     ├─ init
